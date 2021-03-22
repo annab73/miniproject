@@ -1,6 +1,6 @@
 // The below code fetches the .json data using a HTTP GET request
 // Define our data source as JSON file
-var sourceURL = 'data/deaths.json';
+var sourceURL = 'https://raw.githubusercontent.com/annab73/miniproject/c1d2ba8a8d01252dd479ae11962f1740ca1372a8/data/deaths.json';
 // Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 fetch(sourceURL)
   .then(function (response) {
@@ -41,15 +41,15 @@ function outputData(person) {
 
   // REGEX RULES AND ADDING CSS CLASSES TO ROWS FOR TOGGLING
   // Add a class to actors
-  if ((new RegExp(/schauspieler/gi)).test(person.profession)) {
+  if ((new RegExp(/actor|actress/gi)).test(person.profession)) {
     row.classList.add('actor');
   }
   // Add a class to Austrians
-  if ((new RegExp(/österreich/gi)).test(person.profession)) {
+  if ((new RegExp(/austria/gi)).test(person.profession)) {
     row.classList.add('austrian');
   }
-  // Add a class to Auto*
-  if ((new RegExp(/auto/gi)).test(person.profession)) {
+  // Add a class to Singer
+  if ((new RegExp(/singer/gi)).test(person.profession)) {
     row.classList.add('auto');
   }
 
